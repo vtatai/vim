@@ -19,3 +19,6 @@
 [submodule "bundle/fugitive.vim"]
 	path = bundle/fugitive.vim
 	url = git://github.com/vim-scripts/fugitive.vim.git
+[submodule "bundle/vim-session"]
+	path = bundle/vim-session
+	url = git://github.com/xolox/vim-session.git
