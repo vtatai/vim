@@ -63,7 +63,7 @@ set autoread                        " auto read externally modified files
 
 " Solarized
 if has('gui_running')
-  set background=light
+  set background=dark
 else
   set background=dark
 endif
@@ -139,6 +139,13 @@ nmap <C-e> $
 " Map CTRL-A to beginning-of-line
 nmap <C-a> 0
 
+" Use capslock to toggle between insert and normal mode
+" In this case PcKeyboardHack has remapped capslock to F19
+if has('gui_running')
+  nnoremap <F19> a
+  imap <F19> <Esc>
+endif
+
 " Code folding
 " Folding is used by pressing za
 set foldmethod=indent       " Use indentation for folding
@@ -166,25 +173,5 @@ let vimclojure#ParenRainbow=0
 let vimclojure#WantNailgun=1
 let vimclojure#NailgunClient="/Users/victor/src/clojure/ng"
 
-
-" Make maximize splits work
-"nnoremap <C-W>O :call MaximizeToggle ()<CR>
-"nnoremap <C-W>o :call MaximizeToggle ()<CR>
-"nnoremap <C-W><C-O> :call MaximizeToggle ()<CR>
-
-"function! MaximizeToggle()
-  "if exists("s:maximize_session")
-    "exec "source " . s:maximize_session
-    "call delete(s:maximize_session)
-    "unlet s:maximize_session
-    "let &hidden=s:maximize_hidden_save
-    "unlet s:maximize_hidden_save
-  "else
-    "let s:maximize_hidden_save = &hidden
-    "let s:maximize_session = tempname()
-    "set hidden
-    "exec "mksession! " . s:maximize_session
-    "only
-  "endif
-"endfunction
-
+" Settings for orgmode
+let g:org_agenda_files = ['~/daily.org']
