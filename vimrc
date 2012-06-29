@@ -146,6 +146,9 @@ nmap <C-a> 0
 " Remap to use ; instead of : to enter command mode, saves using shift
 nnoremap ; :
 
+" Remap to do NERDTreeFind on leader F
+nnoremap <silent><leader>f :NERDTreeFind<CR>
+
 " Code folding
 " Folding is used by pressing za
 set foldmethod=indent       " Use indentation for folding
