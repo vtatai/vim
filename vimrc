@@ -128,6 +128,10 @@ cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 
+" Remap to allow using ctags in an easier way
+nnoremap <silent>]t  :tnext<CR>
+nnoremap <silent>[t  :tprev<CR>
+
 " Allow quick replace word under cursor
 nnoremap <leader>s :%s/\v<C-r><C-w>//g<Left><Left>
 " Map CTRL-E to end-of-line (insert mode)
@@ -139,12 +143,8 @@ nmap <C-e> $
 " Map CTRL-A to beginning-of-line
 nmap <C-a> 0
 
-" Use capslock to toggle between insert and normal mode
-" In this case PcKeyboardHack has remapped capslock to F19
-if has('gui_running')
-  nnoremap <F19> a
-  imap <F19> <Esc>
-endif
+" Remap to use ; instead of : to enter command mode, saves using shift
+nnoremap ; :
 
 " Code folding
 " Folding is used by pressing za
