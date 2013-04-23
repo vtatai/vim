@@ -135,13 +135,17 @@ nnoremap <silent>[t  :tprev<CR>
 " Allow quick replace word under cursor
 nnoremap <leader>s :%s/\v<C-r><C-w>//g<Left><Left>
 " Map CTRL-E to end-of-line (insert mode)
-imap <C-e> <esc>$i<right>
+"imap <C-e> <esc>$i<right>
 " Map CTRL-A to beginning-of-line (insert mode)
-imap <C-a> <esc>0i
+"imap <C-a> <esc>0i
 " Map CTRL-E to end-of-line
-nmap <C-e> $
+"nmap <C-e> $
 " Map CTRL-A to beginning-of-line
-nmap <C-a> 0
+"nmap <C-a> 0
+
+" Remap to move to start / end of line
+nnoremap <M-h> ^
+nnoremap <M-l> $
 
 " Remap to use ; instead of : to enter command mode, saves using shift
 nnoremap ; :
