@@ -153,6 +153,8 @@ nnoremap ; :
 " Remap to do NERDTreeFind on leader F
 nnoremap <silent><leader>f :NERDTreeFind<CR>
 
+nnoremap <silent><C-p> :CtrlP<CR>
+
 " Code folding
 " Folding is used by pressing za
 set foldmethod=indent       " Use indentation for folding
@@ -182,3 +184,4 @@ let vimclojure#NailgunClient="/Users/victor/src/clojure/ng"
 
 " Settings for orgmode
 let g:org_agenda_files = ['~/daily.org']
+let g:org_heading_shade_leading_stars = 1

@@ -70,3 +70,6 @@
 	path = bundle/vim-orgmode
 	url = git://github.com/jceb/vim-orgmode.git
     ignore = dirty
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = git@github.com:kien/ctrlp.vim.git
