@@ -153,7 +153,7 @@ nnoremap ; :
 " Remap to do NERDTreeFind on leader F
 nnoremap <silent><leader>f :NERDTreeFind<CR>
 
-nnoremap <silent><C-p> :CtrlP<CR>
+nnoremap <silent><leader>p :CtrlP<CR>
 
 " Code folding
 " Folding is used by pressing za
