@@ -185,3 +185,6 @@ let vimclojure#NailgunClient="/Users/victor/src/clojure/ng"
 " Settings for orgmode
 let g:org_agenda_files = ['~/daily.org']
 let g:org_heading_shade_leading_stars = 1
+
+" Settings for indenting XML
+au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
