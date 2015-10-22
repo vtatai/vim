@@ -62,12 +62,8 @@ set guioptions-=T                   " hides macvim toolbar
 set autoread                        " auto read externally modified files
 
 " Solarized
-if has('gui_running')
-  set background=dark
-else
-  set background=dark
-endif
 colorscheme solarized
+set background=dark
 
 map <F2> :mksession! ~/.vim_session <cr> " Quick write session with F2
 map <F3> :source ~/.vim_session <cr>     " And load session with F3
@@ -188,3 +184,10 @@ let g:org_heading_shade_leading_stars = 1
 
 " Settings for indenting XML
 au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
+
+" Create a maximize toggle, keeping original split intacts
+if has('gui_running')
+  nnoremap <silent><C-W>o :MaximizerToggle<CR>
+  vnoremap <silent><C-W>O :MaximizerToggle<CR>gv
+  inoremap <silent><C-W><C-o>:MaximizerToggle<CR>
+endif
