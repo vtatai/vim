@@ -72,3 +72,15 @@
 [submodule "bundle/vim-maximizer"]
 	path = bundle/vim-maximizer
 	url = https://github.com/szw/vim-maximizer.git
+[submodule "bundle/vim-fireplace"]
+	path = bundle/vim-fireplace
+	url = git://github.com/tpope/vim-fireplace.git
+[submodule "bundle/vim-salve"]
+	path = bundle/vim-salve
+	url = git://github.com/tpope/vim-salve.git
+[submodule "bundle/vim-projectionist"]
+	path = bundle/vim-projectionist
+	url = git://github.com/tpope/vim-projectionist.git
+[submodule "bundle/vim-dispatch"]
+	path = bundle/vim-dispatch
+	url = git://github.com/tpope/vim-dispatch.git
