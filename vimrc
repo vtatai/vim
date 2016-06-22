@@ -65,9 +65,12 @@ set autoread                        " auto read externally modified files
 colorscheme solarized
 set background=dark
 
-map <F2> :mksession! ~/.vim_session <cr> " Quick write session with F2
-map <F3> :source ~/.vim_session <cr>     " And load session with F3
-let g:session_default_to_last=1 " Defaults session is last session
+map <F2> :mksession! ~/.vim_session <cr>    " Quick write session with F2
+map <F3> :source ~/.vim_session <cr>        " And load session with F3
+let g:session_default_to_last = 1           " Defaults session is last session
+let g:session_autosave = 'yes'              " Always autosave without prompting
+let g:session_autosave_periodic = 3         " Saves session every three minutes
+let g:session_lock_enabled = 0              " Disable session locking
 
 " Enable filetype detection
 filetype on
