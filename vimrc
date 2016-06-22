@@ -172,15 +172,6 @@ let g:dbext_default_profile = 'vocado'
 " Autosave when losing focus or leaving buffer
 autocmd FocusLost * silent! wa
 
-" Settings for the VimClojure plugin
-let vimclojure#FuzzyIndent=1
-let vimclojure#HighlightBuiltins=1
-let vimclojure#HighlightContrib=1
-let vimclojure#DynamicHighlighting=1
-let vimclojure#ParenRainbow=0
-let vimclojure#WantNailgun=1
-let vimclojure#NailgunClient="/Users/victor/src/clojure/ng"
-
 " Settings for orgmode
 let g:org_agenda_files = ['~/daily.org']
 let g:org_heading_shade_leading_stars = 1
