@@ -7,6 +7,10 @@ if has('gui_running')
   set transparency=2                  " set transparency for MacVim window
   set macmeta                         " makes alt work on my Mac
   set guifont=Anonymous\ Pro:h15
+" Create a maximize toggle, keeping original split intacts
+  nnoremap <silent><C-W>o :MaximizerToggle<CR>
+  vnoremap <silent><C-W>O :MaximizerToggle<CR>gv
+  inoremap <silent><C-W><C-o>:MaximizerToggle<CR>
 endif
 
 set expandtab                       " pressing tab generates spaces not tabs
@@ -27,6 +31,7 @@ set linebreak                       "
 set nolist                          " list disables linebreak
 set tabstop=4                       " a tab is four spaces
 set backspace=indent,eol,start      " allow backspacing over everything in insert mode
+set smartindent                     " better indent for c-like files
 set autoindent                      " always set autoindenting on
 set copyindent                      " copy the previous indentation on autoindenting
 set number                          " always show line numbers
@@ -43,7 +48,7 @@ set incsearch                       " show search matches as you type
 
 set history=1000                    " remember more commands and search history
 set undolevels=1000                 " use many muchos levels of undo
-set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildignore=*.swp,*.bak,*.pyc,*.class,.cabal-sandbox
 set title                           " change the terminal's title
 set visualbell                      " don't beep
 set noerrorbells                    " don't beep
@@ -55,8 +60,9 @@ set noswapfile                      " no more annoying swap files
 
 set wildmenu                        " show menu
 set wildmode=list:longest,full      " wildmenu complete to longest match, with full interface
+set completeopt+=longest,menuone    " complete inserts longest option http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
 
-"set undofile                        " saves undo information in an external
+"set undofile                       " saves undo information in an external
 set guioptions-=T                   " hides macvim toolbar
 
 set autoread                        " auto read externally modified files
@@ -179,9 +185,45 @@ let g:org_heading_shade_leading_stars = 1
 " Settings for indenting XML
 au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
 
-" Create a maximize toggle, keeping original split intacts
-if has('gui_running')
-  nnoremap <silent><C-W>o :MaximizerToggle<CR>
-  vnoremap <silent><C-W>O :MaximizerToggle<CR>gv
-  inoremap <silent><C-W><C-o>:MaximizerToggle<CR>
+
+" Syntastic settings from http://www.stephendiehl.com/posts/vim_2016.html
+map <Leader>s :SyntasticToggleMode<CR>
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+" END Syntastic settings
+
+" GhcMod
+map <silent> tw :GhcModTypeInsert<CR>
+map <silent> ts :GhcModSplitFunCase<CR>
+map <silent> tq :GhcModType<CR>
+map <silent> te :GhcModTypeClear<CR>
+" END GhcMod
+
+" Supertab
+let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+
+if has("gui_running")
+  imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
+else " no gui
+  if has("unix")
+    inoremap <Nul> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
+  endif
 endif
+let g:haskellmode_completion_ghc = 1
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+" END Supertab
+
+" Tabularize
+let g:haskell_tabular = 1
+
+vmap a= :Tabularize /=<CR>
+vmap a; :Tabularize /::<CR>
+vmap a- :Tabularize /-><CR>
+" END Tabularize
