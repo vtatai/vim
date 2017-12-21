@@ -111,3 +111,6 @@
 [submodule "bundle/vimproc.vim"]
 	path = bundle/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim.git
+[submodule "bundle/vim-haskellConcealPlus"]
+	path = bundle/vim-haskellConcealPlus
+	url = git@github.com:enomsg/vim-haskellConcealPlus.git
