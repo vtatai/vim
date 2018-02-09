@@ -114,3 +114,6 @@
 [submodule "bundle/vim-haskellConcealPlus"]
 	path = bundle/vim-haskellConcealPlus
 	url = git@github.com:enomsg/vim-haskellConcealPlus.git
+[submodule "bundle/vim-misc"]
+	path = bundle/vim-misc
+	url = https://github.com/xolox/vim-misc.git
