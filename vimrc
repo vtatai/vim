@@ -183,7 +183,7 @@ let g:org_agenda_files = ['~/daily.org']
 let g:org_heading_shade_leading_stars = 1
 
 " Settings for indenting XML
-au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
+"au FileType xml exe ":silent %!xmllint --format --recover - 1>/dev/null"
 
 
 " Syntastic settings from http://www.stephendiehl.com/posts/vim_2016.html
