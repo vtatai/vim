@@ -38,10 +38,6 @@
 	path = bundle/vim-ragtag
 	url = git://github.com/tpope/vim-ragtag.git
     ignore = dirty
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
-    ignore = dirty
 [submodule "bundle/vim-autoclose"]
 	path = bundle/vim-autoclose
 	url = git://github.com/Townk/vim-autoclose.git
@@ -114,3 +110,12 @@
 [submodule "bundle/typescript-vim"]
 	path = bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "bundle/NeoSolarized"]
+	path = bundle/NeoSolarized
+	url = git@github.com:icymind/NeoSolarized.git
+[submodule "bundle/intero-neovim"]
+	path = bundle/intero-neovim
+	url = git@github.com:parsonsmatt/intero-neovim.git
+[submodule "bundle/ale"]
+	path = bundle/ale
+	url = git@github.com:w0rp/ale.git

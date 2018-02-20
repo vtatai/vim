@@ -352,3 +352,4 @@ if version >= 508 || !exists("did_hs_syntax_inits")
 endif
 
 let b:current_syntax = "haskell"
+
