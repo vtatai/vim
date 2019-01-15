@@ -50,10 +50,6 @@
 	path = bundle/vim-repeat
 	url = git://github.com/tpope/vim-repeat.git
     ignore = dirty
-[submodule "bundle/vim-powerline"]
-	path = bundle/vim-powerline
-	url = git://github.com/Lokaltog/vim-powerline.git
-    ignore = dirty
 [submodule "bundle/vim-speeddating"]
 	path = bundle/vim-speeddating
 	url = git://github.com/tpope/vim-speeddating.git

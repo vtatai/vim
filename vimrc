@@ -141,7 +141,7 @@ nnoremap <silent>[t  :tprev<CR>
 " Allow quick replace word under cursor
 nnoremap <leader>s :%s/\v<C-r><C-w>//g<Left><Left>
 " Map CTRL-E to end-of-line (insert mode)
-"imap <C-e> <esc>$i<right>
+imap <C-e> <esc>$i<right>
 " Map CTRL-A to beginning-of-line (insert mode)
 "imap <C-a> <esc>0i
 " Map CTRL-E to end-of-line
@@ -168,14 +168,6 @@ set foldnestmax=10          " Deepest fold
 set nofoldenable            " No fold enabled by default
 "set foldlevel=1             " Have just one foldlevel
 
-" dbext profiles
-let g:dbext_default_profile_hf = 'type=MYSQL:user=root:dbname=health_fly_development:passwd=:extra=-t'
-let g:dbext_default_profile_mysql = 'type=MYSQL:user=root:extra=-t'
-let g:dbext_default_profile_vocado = 'type=MYSQL:user=root:dbname=vocado:passwd=:extra=-t'
-let g:dbext_default_profile_vocado_new = 'type=MYSQL:user=root:dbname=vocado_new:passwd=:extra=-t'
-let g:dbext_default_profile_vocado_perf = 'type=MYSQL:user=root:passwd=:dbname=vocado:host=perf'
-let g:dbext_default_profile = 'vocado'
-
 " Autosave when losing focus or leaving buffer
 autocmd FocusLost * silent! wa
 
@@ -183,31 +175,6 @@ autocmd FocusLost * silent! wa
 let g:org_agenda_files = ['~/daily.org']
 let g:org_heading_shade_leading_stars = 1
 
-" Settings for indenting XML
-"au FileType xml exe ":silent %!xmllint --format --recover - 1>/dev/null"
-
-
-" Syntastic settings from http://www.stephendiehl.com/posts/vim_2016.html
-map <Leader>s :SyntasticToggleMode<CR>
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-" END Syntastic settings
-
-" GhcMod
-map <silent> tw :GhcModTypeInsert<CR>
-map <silent> ts :GhcModSplitFunCase<CR>
-map <silent> tq :GhcModType<CR>
-map <silent> te :GhcModTypeClear<CR>
-" END GhcMod
-
-" Supertab
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 
 if has("gui_running")
@@ -220,11 +187,3 @@ endif
 let g:haskellmode_completion_ghc = 1
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 " END Supertab
-
-" Tabularize
-let g:haskell_tabular = 1
-
-vmap a= :Tabularize /=<CR>
-vmap a; :Tabularize /::<CR>
-vmap a- :Tabularize /-><CR>
-" END Tabularize
